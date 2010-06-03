@@ -39,6 +39,8 @@ if $*.length >= 2
   `mkdir #{directory}`
 
   target_version = PhoneGapVersionNumber.new $*.shift
+  
+  # open a README file in directory
 
   %w(iphone android blackberry symbian.wrt palm winmo).each do |platform|
     `git clone #{PhoneGapRepo.url_for platform} #{directory}/#{platform}`
@@ -46,10 +48,11 @@ if $*.length >= 2
     
     versions = []
     tags.each { |tag| versions.push PhoneGapVersionNumber.new tag.rstrip }
-
-    puts platform
-    p versions
+    
+    # checkout highest tag that is same_global as target_version
+    # write to readme file
+    # remove .git directory `rm rf .git`
   end
-
-  p target_version
+  
+  # zip up all platforms
 end
