@@ -59,4 +59,6 @@ if $*.length >= 2
   end
   
   # zip up all platforms
+  # upload somewhere
+  # boom
 end
