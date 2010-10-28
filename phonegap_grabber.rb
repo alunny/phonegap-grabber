@@ -31,6 +31,10 @@ class PhoneGapVersionNumber
   def same_global other
     major == other.major && global == other.global
   end
+
+  def same_minor other
+    same_global && minor == other.minor
+  end
 end
 
 # when called directly
